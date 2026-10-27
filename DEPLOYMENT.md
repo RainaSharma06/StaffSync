@@ -34,9 +34,9 @@ This guide walks you through deploying **StaffSync** with the React frontend hos
 5. Click **Create Web Service**.
 6. Once deployed, Render will provide a public URL like:
    ```
-   https://staffsync-api.onrender.com
+   https://staffsync-1-fztc.onrender.com
    ```
-   Test your API health check: `https://staffsync-api.onrender.com/api/health`
+   Test your API health check: `https://staffsync-1-fztc.onrender.com/api/health`
 
 ---
 
@@ -71,7 +71,7 @@ This guide walks you through deploying **StaffSync** with the React frontend hos
 4. Add your Backend API URL environment variable in Vercel:
    ```bash
    vercel env add VITE_API_URL production
-   # Value: https://staffsync-api.onrender.com/api
+   # Value: https://staffsync-1-fztc.onrender.com/api
    ```
    Then trigger a redeploy:
    ```bash
@@ -97,7 +97,7 @@ This guide walks you through deploying **StaffSync** with the React frontend hos
    - **Output Directory**: `client/dist`
 5. Under **Environment Variables**, add:
    - **Name**: `VITE_API_URL`
-   - **Value**: `https://staffsync-api.onrender.com/api`
+   - **Value**: `https://staffsync-1-fztc.onrender.com/api`
 6. Click **Deploy**!
 
 Your frontend will be live on a fast, globally distributed URL (e.g., `https://staffsync-hrms.vercel.app`).

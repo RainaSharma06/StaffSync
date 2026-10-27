@@ -63,9 +63,10 @@ npm run dev
 ```
 
 ### 3. Access StaffSync
-- **Frontend Portal**: [http://localhost:5173](http://localhost:5173)
-- **Backend API**: [http://localhost:5000/api](http://localhost:5000/api)
-- **API Health Check**: [http://localhost:5000/api/health](http://localhost:5000/api/health)
+- **Live Production API**: [https://staffsync-1-fztc.onrender.com/api](https://staffsync-1-fztc.onrender.com/api)
+- **Live Production Health Check**: [https://staffsync-1-fztc.onrender.com/api/health](https://staffsync-1-fztc.onrender.com/api/health)
+- **Local Frontend Portal**: [http://localhost:5173](http://localhost:5173)
+- **Local Backend API**: [http://localhost:5000/api](http://localhost:5000/api)
 
 ---
 
