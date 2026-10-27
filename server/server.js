@@ -54,6 +54,24 @@ app.post('/api/seed', async (req, res) => {
 // Main API Routes
 app.use('/api', apiRoutes);
 
+// Serve static frontend assets if production bundle exists
+const path = require('path');
+const fs = require('fs');
+const clientDistPath = path.join(__dirname, '../client/dist');
+
+if (fs.existsSync(clientDistPath)) {
+  console.log(`[Server] Serving production frontend build from: ${clientDistPath}`);
+  app.use(express.static(clientDistPath));
+
+  // SPA fallback for client-side routing (non-API GET requests)
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) {
+      return next();
+    }
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  });
+}
+
 // 404 handler for unknown routes
 app.use((req, res) => {
   res.status(404).json({
