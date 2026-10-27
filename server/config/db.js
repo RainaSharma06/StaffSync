@@ -20,9 +20,12 @@ const connectDB = async () => {
     try {
       const { MongoMemoryServer } = require('mongodb-memory-server');
       mongodInstance = await MongoMemoryServer.create({
+        binary: {
+          version: '7.0.14',
+        },
         instance: {
-          dbName: 'staffsync'
-        }
+          dbName: 'staffsync',
+        },
       });
       const inMemoryUri = mongodInstance.getUri();
       console.log(`[Database] Embedded MongoDB instance created at: ${inMemoryUri}`);
