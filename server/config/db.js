@@ -3,13 +3,15 @@ const mongoose = require('mongoose');
 let mongodInstance = null;
 
 const connectDB = async () => {
-  const uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/staffsync';
+  const uri =
+    process.env.MONGODB_URI ||
+    'mongodb+srv://rainasharma6002_db_user:L1d3GwYDudeQHRF3@cluster0.epzaeez.mongodb.net/staffsync?retryWrites=true&w=majority';
   
   try {
-    console.log(`[Database] Attempting connection to MongoDB at: ${uri}...`);
-    // Attempt standard connection with a short serverSelectionTimeoutMS
+    console.log(`[Database] Attempting connection to MongoDB at: ${uri.replace(/:([^:@]+)@/, ':****@')}...`);
+    // Connect with serverSelectionTimeoutMS suitable for cloud Atlas
     await mongoose.connect(uri, {
-      serverSelectionTimeoutMS: 2500,
+      serverSelectionTimeoutMS: 5000,
     });
     console.log(`[Database] Connected successfully to MongoDB: ${mongoose.connection.host}`);
     return mongoose.connection;
